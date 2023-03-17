@@ -11,3 +11,23 @@
    11  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
    12  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
    13  az webapp list   --resource-group tailspin-space-game-rg   --query "[].{hostName: defaultHostName, state: state}"   --output table
+   14  history 
+   15  az webapp list   --resource-group tailspin-space-game-rg   --query "[].{hostName: defaultHostName, state: state}"   --output table
+   16  echo $webappsuffix
+   17  az group delete --name tailspin-space-game-rg
+   18  az group list
+   19  az configure --default location=northeurope
+   20  az appservice plan create   --name tailspin-space-game-asp   --resource-group tailspin-space-game-rg   --sku B1   --is-linux
+   21  az group create --name tailspin-space-game-rg
+   22  az appservice plan create   --name tailspin-space-game-asp   --resource-group tailspin-space-game-rg   --sku B1   --is-linux
+   23  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   24  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   25  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   26  echo $webappsuffix
+   27  webappsuffix=$RANDOM
+   28  echo $webappsuffix
+   29  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   30  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   31  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   32  az webapp list   --resource-group tailspin-space-game-rg   --query "[].{hostName: defaultHostName, state: state}"   --output table
+   33  az group delete --name tailspin-space-game-rg
