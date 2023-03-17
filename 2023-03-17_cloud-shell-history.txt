@@ -1,0 +1,13 @@
+    1  az account list-locations   --query "[].{Name: name, DisplayName: displayName}"   --output table
+    2  az configure --default location=germanywestcentral
+    3  webappsuffix=$RANDOM
+    4  printenv
+    5  printenv | sort
+    6  az group create --name tailspin-space-game-rg
+    7  az configure --default location=northeurope
+    8  az group create --name tailspin-space-game-rg
+    9  az appservice plan create   --name tailspin-space-game-asp   --resource-group tailspin-space-game-rg   --sku B1   --is-linux
+   10  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   11  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   12  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   13  az webapp list   --resource-group tailspin-space-game-rg   --query "[].{hostName: defaultHostName, state: state}"   --output table
