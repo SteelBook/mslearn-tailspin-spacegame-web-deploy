@@ -1,0 +1,78 @@
+    1  az account list-locations   --query "[].{Name: name, DisplayName: displayName}"   --output table
+    2  az configure --default location=germanywestcentral
+    3  webappsuffix=$RANDOM
+    4  printenv
+    5  printenv | sort
+    6  az group create --name tailspin-space-game-rg
+    7  az configure --default location=northeurope
+    8  az group create --name tailspin-space-game-rg
+    9  az appservice plan create   --name tailspin-space-game-asp   --resource-group tailspin-space-game-rg   --sku B1   --is-linux
+   10  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   11  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   12  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   13  az webapp list   --resource-group tailspin-space-game-rg   --query "[].{hostName: defaultHostName, state: state}"   --output table
+   14  history 
+   15  az webapp list   --resource-group tailspin-space-game-rg   --query "[].{hostName: defaultHostName, state: state}"   --output table
+   16  echo $webappsuffix
+   17  az group delete --name tailspin-space-game-rg
+   18  az group list
+   19  az configure --default location=northeurope
+   20  az appservice plan create   --name tailspin-space-game-asp   --resource-group tailspin-space-game-rg   --sku B1   --is-linux
+   21  az group create --name tailspin-space-game-rg
+   22  az appservice plan create   --name tailspin-space-game-asp   --resource-group tailspin-space-game-rg   --sku B1   --is-linux
+   23  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   24  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   25  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   26  echo $webappsuffix
+   27  webappsuffix=$RANDOM
+   28  echo $webappsuffix
+   29  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   30  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   31  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   32  az webapp list   --resource-group tailspin-space-game-rg   --query "[].{hostName: defaultHostName, state: state}"   --output table
+   33  az group delete --name tailspin-space-game-rg
+   34  history 
+   35  echo $webappsuffix
+   36  history | grep region
+   37  history | grep location
+   38  az configure --default location=northeurope
+   39  webappsuffix=$RANDOM
+   40  echo $webappsuffix
+   41  history | grep group
+   42  az group create --name tailspin-space-game-rg
+   43  az appservice plan create   --name tailspin-space-game-asp   --resource-group tailspin-space-game-rg   --sku B1   --is-linux
+   44  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   45  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   46  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-asp   --runtime "DOTNET|6.0"
+   47  az webapp list
+   48  az webapp list -- output table
+   49  az webapp list --output table
+   50  history | grep web-dev
+   51  history | grep echo
+   52  az webapp list --output table
+   53  az group delete --name tailspin-space-game-rg
+   54  webappsuffix=$RANDOM
+   55  az group create --name tailspin-space-game-rg
+   56  az appservice plan create   --name tailspin-space-game-test-asp   --resource-group tailspin-space-game-rg   --sku B1   --is-linux
+   57  az appservice plan create   --name tailspin-space-game-prod-asp   --resource-group tailspin-space-game-rg   --sku P1V2   --is-linux
+   58  history 
+   59  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-test-asp   --runtime "DOTNET|6.0"
+   60  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-test-asp   --runtime "DOTNET|6.0"
+   61  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-prod-asp   --runtime "DOTNET|6.0"
+   62  webappsuffix=$RANDOM
+   63  az webapp create   --name tailspin-space-game-web-dev-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-test-asp   --runtime "DOTNET|6.0"
+   64  az webapp create   --name tailspin-space-game-web-test-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-test-asp   --runtime "DOTNET|6.0"
+   65  az webapp create   --name tailspin-space-game-web-staging-$webappsuffix   --resource-group tailspin-space-game-rg   --plan tailspin-space-game-prod-asp   --runtime "DOTNET|6.0"
+   66  echo $webappsuffix
+   67  webappsuffix=[20028872
+   68  webappsuffix=28872
+   69  az webapp list   --resource-group tailspin-space-game-rg   --query "[].{hostName: defaultHostName, state: state}"   --output table
+   70  staging=$(az webapp list \
+   71    --resource-group tailspin-space-game-rg \
+   72    --query "[?contains(@.name, 'tailspin-space-game-web-staging')].{name: name}" \
+   73    --output tsv)
+   74  echo $staging
+   75  az webapp deployment slot create   --name $staging   --resource-group tailspin-space-game-rg   --slot swap
+   76  az webapp deployment slot list     --name $staging     --resource-group tailspin-space-game-rg     --query [].hostNames     --output tsv
+   77  az group delete --name tailspin-space-game-rg
+   78  history > 2023-03-21_log.txt
